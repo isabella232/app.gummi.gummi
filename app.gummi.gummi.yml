@@ -1,6 +1,6 @@
 id: app.gummi.gummi
 runtime: org.gnome.Platform
-runtime-version: "43"
+runtime-version: '43'
 sdk: org.gnome.Sdk
 rename-icon: gummi
 rename-desktop-file: gummi.desktop
@@ -14,18 +14,18 @@ add-extensions:
     directory: texlive
     subdirectories: true
     autodelete: true
-    version: "22.08"
+    version: '22.08'
 
 cleanup:
-  - "/include"
-  - "/lib/pkgconfig"
-  - "/man"
-  - "/share/doc"
-  - "/share/gtk-doc"
-  - "/share/man"
-  - "/share/pkgconfig"
-  - "*.a"
-  - "*.la"
+  - /include
+  - /lib/pkgconfig
+  - /man
+  - /share/doc
+  - /share/gtk-doc
+  - /share/man
+  - /share/pkgconfig
+  - '*.a'
+  - '*.la'
 
 finish-args:
   - --socket=wayland
@@ -39,12 +39,12 @@ finish-args:
 
 modules:
   - shared-modules/intltool/intltool-0.51.json
-  
+
   - name: mkdir-texlive
     buildsystem: simple
     build-commands:
       - install -d /app/texlive
-  
+
   - name: gtksourceview3
     config-opts:
       - --disable-gtk-doc
@@ -64,8 +64,8 @@ modules:
   - name: boost
     buildsystem: simple
     build-commands:
-      - "./bootstrap.sh --prefix=/app --with-libraries=graph,program_options,system,thread"
-      - "./b2 -j $FLATPAK_BUILDER_N_JOBS install"
+      - ./bootstrap.sh --prefix=/app --with-libraries=graph,program_options,system,thread
+      - ./b2 -j $FLATPAK_BUILDER_N_JOBS install
     sources:
       - type: archive
         url: https://boostorg.jfrog.io/artifactory/main/release/1.81.0/source/boost_1_81_0.tar.bz2
@@ -80,15 +80,15 @@ modules:
   - name: poppler
     buildsystem: cmake-ninja
     config-opts:
-      - "-DCMAKE_INSTALL_LIBDIR=/app/lib"
-      - "-DCMAKE_INSTALL_INCLUDEDIR=/app/include"
-      - "-DENABLE_GOBJECT_INTROSPECTION=OFF"
-      - "-DENABLE_LIBOPENJPEG=openjpeg2"
-      - "-DENABLE_QT5=OFF"
-      - "-DENABLE_QT6=OFF"
-      - "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+      - -DCMAKE_INSTALL_LIBDIR=/app/lib
+      - -DCMAKE_INSTALL_INCLUDEDIR=/app/include
+      - -DENABLE_GOBJECT_INTROSPECTION=OFF
+      - -DENABLE_LIBOPENJPEG=openjpeg2
+      - -DENABLE_QT5=OFF
+      - -DENABLE_QT6=OFF
+      - -DCMAKE_BUILD_TYPE=RelWithDebInfo
     cleanup:
-      - "/bin"
+      - /bin
     sources:
       - type: archive
         url: https://poppler.freedesktop.org/poppler-23.01.0.tar.xz
@@ -122,7 +122,8 @@ modules:
         tag: 0.8.3
         x-checker-data:
           type: git
-          tag-pattern: "([\\d.]+)$"
+          tag-pattern: ([\d.]+)$
           is-important: true
+        commit: 0b204f0f50723dd8ff12dbee2b2129491178fab6
       - type: file
         path: app.gummi.gummi.appdata.xml
