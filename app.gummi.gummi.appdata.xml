@@ -4,7 +4,7 @@
   <id>app.gummi.gummi</id>
   <launchable type="desktop-id">app.gummi.gummi.desktop</launchable>
   <metadata_license>CC0-1.0</metadata_license>
-  <project_license>GPL-2.0</project_license>
+  <project_license>MIT</project_license>
   <name>Gummi</name>
   <summary>The simple LaTeX editor</summary>
   <description>
