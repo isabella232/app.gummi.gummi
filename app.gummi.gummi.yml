@@ -119,10 +119,10 @@ modules:
       - type: git
         url: https://github.com/alexandervdm/gummi.git
         tag: 0.8.3
+        commit: 0b204f0f50723dd8ff12dbee2b2129491178fab6
         x-checker-data:
           type: git
           tag-pattern: ([\d.]+)$
           is-important: true
-        commit: 0b204f0f50723dd8ff12dbee2b2129491178fab6
       - type: file
         path: app.gummi.gummi.appdata.xml
