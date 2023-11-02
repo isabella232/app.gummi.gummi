@@ -28,7 +28,7 @@ cleanup:
   - '*.la'
 
 finish-args:
-  - --socket=fallback-x11
+  - --socket=x11
   - --share=ipc
   - --filesystem=xdg-documents
   - --env=TEXMFDIST=/app/texlive/texmf-dist
