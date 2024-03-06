@@ -11,7 +11,8 @@
     <p>Gummi is a LaTeX editor written in the C programming language using the GTK+ interface toolkit. It was designed with simplicity and the novice user in mind, but also offers features that speak to the more advanced user.</p>
   </description>
   <categories>
-    <category>Productivity</category>
+    <category>Office</category>
+    <category>WordProcessor</category>
   </categories>
   <screenshots>
     <screenshot type="default">
