@@ -1,6 +1,6 @@
 id: app.gummi.gummi
 runtime: org.gnome.Platform
-runtime-version: '45'
+runtime-version: '46'
 sdk: org.gnome.Sdk
 rename-icon: gummi
 rename-desktop-file: gummi.desktop
